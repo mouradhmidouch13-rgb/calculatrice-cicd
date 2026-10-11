@@ -15,10 +15,6 @@ def division(a, b):
         raise ValueError("Division par zéro impossible")
     return a / b
 
+
 def puissance(a, b):
     return a ** b
-from calculatrice import addition, soustraction, multiplication, division, puissance
-
-def test_puissance():
-    assert puissance(2, 3) == 8
-
