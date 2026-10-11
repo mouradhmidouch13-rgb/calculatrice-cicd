@@ -1,5 +1,10 @@
-import pytest
-from calculatrice import addition, division, multiplication, soustraction
+from calculatrice import (
+    addition,
+    soustraction,
+    multiplication,
+    division,
+    puissance,
+)
 
 
 def test_addition():
@@ -7,7 +12,7 @@ def test_addition():
 
 
 def test_soustraction():
-    assert soustraction(10, 4) == 6
+    assert soustraction(5, 2) == 3
 
 
 def test_multiplication():
@@ -19,12 +24,12 @@ def test_division():
 
 
 def test_division_par_zero():
-    with pytest.raises(ValueError):
+    try:
         division(5, 0)
-
-from calculatrice import addition, soustraction, multiplication, division, puissance
+        assert False
+    except ValueError:
+        assert True
 
 
 def test_puissance():
     assert puissance(2, 3) == 8
-    
